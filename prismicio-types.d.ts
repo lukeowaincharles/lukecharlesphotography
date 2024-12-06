@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | TwoColMediaSlice
+  | VideoEmbedSlice
+  | HeroSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -79,15 +83,67 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Background image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<"mobile">;
+
+  /**
+   * Title field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Content field in *RichText → Primary*
+   * Content field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
+   * - **API ID Path**: rich_text.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -123,6 +179,137 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *TwoColMedia → Default → Primary*
+ */
+export interface TwoColMediaSliceDefaultPrimary {
+  /**
+   * Layout field in *TwoColMedia → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: two_col_media.default.primary.layout
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  layout: prismic.BooleanField;
+
+  /**
+   * Background image field in *TwoColMedia → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_col_media.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *TwoColMedia → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_col_media.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Button field in *TwoColMedia → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_col_media.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+}
+
+/**
+ * Default variation for TwoColMedia Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoColMediaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TwoColMediaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TwoColMedia*
+ */
+type TwoColMediaSliceVariation = TwoColMediaSliceDefault;
+
+/**
+ * TwoColMedia Shared Slice
+ *
+ * - **API ID**: `two_col_media`
+ * - **Description**: TwoColMedia
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoColMediaSlice = prismic.SharedSlice<
+  "two_col_media",
+  TwoColMediaSliceVariation
+>;
+
+/**
+ * Primary content in *VideoEmbed → Default → Primary*
+ */
+export interface VideoEmbedSliceDefaultPrimary {
+  /**
+   * Title field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Title of component
+   * - **API ID Path**: video_embed.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Youtube ID field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Paste the YT ID
+   * - **API ID Path**: video_embed.default.primary.youtube_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  youtube_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoEmbed Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoEmbedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoEmbedSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoEmbed*
+ */
+type VideoEmbedSliceVariation = VideoEmbedSliceDefault;
+
+/**
+ * VideoEmbed Shared Slice
+ *
+ * - **API ID**: `video_embed`
+ * - **Description**: VideoEmbed
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoEmbedSlice = prismic.SharedSlice<
+  "video_embed",
+  VideoEmbedSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -131,16 +318,39 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      TwoColMediaSlice,
+      TwoColMediaSliceDefaultPrimary,
+      TwoColMediaSliceVariation,
+      TwoColMediaSliceDefault,
+      VideoEmbedSlice,
+      VideoEmbedSliceDefaultPrimary,
+      VideoEmbedSliceVariation,
+      VideoEmbedSliceDefault,
     };
   }
 }

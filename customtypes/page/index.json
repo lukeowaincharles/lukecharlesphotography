@@ -27,6 +27,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "two_col_media": {
+              "type": "SharedSlice"
+            },
+            "video_embed": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
             "rich_text": {
               "type": "SharedSlice"
             }

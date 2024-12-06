@@ -1,0 +1,58 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "mailto:lukeowaincharles@gmail.com",
+					"target": "_blank",
+					"text": "Get in touch"
+				}
+			},
+			"background_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+					"width": 4380,
+					"height": 2895
+				},
+				"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=1227%2C0%2C1926%2C2895&w=350&h=526",
+				"width": 350,
+				"height": 526,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 1227,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "As a passionate golf photographer, I am dedicated to capturing the beauty and excitement of the game. My goal is to create images that evoke the spirit and elegance of golf. Whether it's the serene landscapes or the dynamic action of a golfer's swing.\n\nWith a keen eye for detail and a love for this beautiful sport, I've honed my craft to produce high-quality photographs that tell a story.\n\nIf you're a golfer, club, society or brand looking for exceptional photography to showcase your golf experience in a unique and memorable way, please click the button below.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"layout": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": []
+	}
+]

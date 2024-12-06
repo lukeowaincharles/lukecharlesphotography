@@ -3,5 +3,8 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  hero: dynamic(() => import("./Hero")),
   rich_text: dynamic(() => import("./RichText")),
+  two_col_media: dynamic(() => import("./TwoColMedia")),
+  video_embed: dynamic(() => import("./VideoEmbed")),
 };

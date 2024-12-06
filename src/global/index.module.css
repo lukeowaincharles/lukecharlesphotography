@@ -1,0 +1,33 @@
+.html {
+  font-size: 16px;
+  --r8: calc((8 / var(--base) * 1rem));
+  --r16: calc((16 / var(--base) * 1rem));
+  --r28: calc((28 / var(--base) * 1rem));
+  --r40: calc((40 / var(--base) * 1rem));
+  --r48: calc((48 / var(--base) * 1rem));
+  --base: 16;
+
+  /* Colours */
+  --white: #ffffff;
+  --grey-800: #272728;
+  --grey-900: #111827;
+}
+
+.html * {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section {
+  margin: var(--r48);
+}
+
+.section__dark {
+  background-color: var(--grey-800);
+  color: var(--white);
+  padding: var(--r48) 0;
+}

@@ -1,0 +1,8 @@
+.videoEmbed {
+  position: relative;
+}
+
+.videoEmbed__iframe {
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

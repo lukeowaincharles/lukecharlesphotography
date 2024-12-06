@@ -17,10 +17,12 @@
     "@prismicio/client": "^7.13.0",
     "@prismicio/next": "^1.7.1",
     "@prismicio/react": "^2.9.1",
+    "bootstrap": "^5.3.3",
     "next": "^15.0.2",
     "prismic-cli": "^4.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.59",

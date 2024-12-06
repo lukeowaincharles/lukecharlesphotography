@@ -83,6 +83,96 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument;
 
 /**
+ * Item in *Contact → Default → Primary → Socials*
+ */
+export interface ContactSliceDefaultPrimarySocialsItem {
+  /**
+   * link and svg field in *Contact → Default → Primary → Socials*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.socials[].link_and_svg
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_and_svg: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Title field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Button field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField;
+
+  /**
+   * Socials field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.socials[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  socials: prismic.GroupField<Simplify<ContactSliceDefaultPrimarySocialsItem>>;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -335,6 +425,11 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ContactSlice,
+      ContactSliceDefaultPrimarySocialsItem,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

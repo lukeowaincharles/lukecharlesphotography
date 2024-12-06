@@ -2,7 +2,10 @@
   font-size: 16px;
   --r8: calc((8 / var(--base) * 1rem));
   --r16: calc((16 / var(--base) * 1rem));
+  --r20: calc((16 / var(--base) * 1rem));
+  --r24: calc((24 / var(--base) * 1rem));
   --r28: calc((28 / var(--base) * 1rem));
+  --r32: calc((32 / var(--base) * 1rem));
   --r40: calc((40 / var(--base) * 1rem));
   --r48: calc((48 / var(--base) * 1rem));
   --base: 16;

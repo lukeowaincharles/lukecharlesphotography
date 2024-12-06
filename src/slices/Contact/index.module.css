@@ -1,0 +1,6 @@
+.contact {
+  background-color: var(--grey-800);
+  padding: var(--r40) var(--r20);
+  text-align: center;
+  color: var(--white);
+}

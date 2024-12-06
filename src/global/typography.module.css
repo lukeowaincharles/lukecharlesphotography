@@ -1,5 +1,9 @@
-
-.h1, .h2, .h3, .h4, .h5,.h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin-top: 0;
   margin-bottom: var(--r8);
   font-weight: 500;
@@ -10,8 +14,16 @@
   font-size: var(--r28);
 }
 
+.h2 {
+  font-size: var(--r24);
+}
+
 @media (min-width: 1200px) {
   .h1 {
     font-size: var(--r40);
+  }
+
+  .h2 {
+    font-size: var(--r32);
   }
 }

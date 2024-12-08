@@ -44,13 +44,15 @@
             "label": "Socials",
             "repeat": true,
             "fields": {
-              "link_and_svg": {
-                "type": "StructuredText",
+              "socials": {
+                "type": "Select",
                 "config": {
-                  "label": "link and svg",
+                  "label": "Socials",
                   "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "hyperlink,embed"
+                  "options": [
+                    "instagram",
+                    "youtube"
+                  ]
                 }
               }
             }

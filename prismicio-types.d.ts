@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | ContactSlice
   | TwoColMediaSlice
   | VideoEmbedSlice
   | HeroSlice
@@ -87,14 +88,14 @@ export type AllDocumentTypes = PageDocument;
  */
 export interface ContactSliceDefaultPrimarySocialsItem {
   /**
-   * link and svg field in *Contact → Default → Primary → Socials*
+   * Socials field in *Contact → Default → Primary → Socials*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact.default.primary.socials[].link_and_svg
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: contact.default.primary.socials[].socials
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  link_and_svg: prismic.RichTextField;
+  socials: prismic.SelectField<"instagram" | "youtube">;
 }
 
 /**

@@ -4,3 +4,17 @@
   text-align: center;
   color: var(--white);
 }
+
+.contactContent {
+  margin: 0 auto;
+  max-width: 470px;
+}
+
+.contactSocials {
+  margin-top: var(--r24);
+}
+
+.contactSocials a {
+  color: var(--white);
+  margin-right: var(--r16);
+}

@@ -1,6 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import global from "../../global/index.module.css";
+import typography from "../../global/typography.module.css";
 import styles from "./index.module.css";
 import ContainerWrap from "@/components/container";
 
@@ -30,7 +31,7 @@ const VideoEmbed = ({ slice }: VideoEmbedProps): JSX.Element => {
     >
       <ContainerWrap>
         <div className="video-embed__content">
-          <h2>{slice.primary.title}</h2>
+          <h2 className={typography.h2}>{slice.primary.title}</h2>
         </div>
         <iframe
           className={styles.videoEmbed__iframe}

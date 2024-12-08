@@ -25,7 +25,8 @@
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "http://google.com",
+					"url": "mailto:lukeowaincharles@gmail.com",
+					"target": "_blank",
 					"text": "Send me an email"
 				}
 			},
@@ -36,19 +37,11 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"link_and_svg",
+								"socials",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Social link 1",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "instagram",
+									"type": "Select"
 								}
 							]
 						]
@@ -57,19 +50,11 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"link_and_svg",
+								"socials",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Social link 2",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "youtube",
+									"type": "Select"
 								}
 							]
 						]

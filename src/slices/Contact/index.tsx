@@ -29,7 +29,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
         />
         <div className={styles.contactSocials}>
           {slice.primary.socials.map((item, i) => (
-            <>
+            <span key={i}>
               {/* @todo This needs reworking to stop the code repetition */}
               {item.socials === "instagram" && (
                 <a
@@ -69,7 +69,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
                   </svg>
                 </a>
               )}
-            </>
+            </span>
           ))}
         </div>
       </div>

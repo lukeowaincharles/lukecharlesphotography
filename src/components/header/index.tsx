@@ -1,13 +1,14 @@
 import { Container } from "react-bootstrap";
 import "./header.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header>
       <Container>
-        <a href="/">
+        <Link href="/">
           <p>Luke Charles Photography</p>
-        </a>
+        </Link>
       </Container>
     </header>
   );

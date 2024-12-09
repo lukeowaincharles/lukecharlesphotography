@@ -64,7 +64,6 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
           <Modal.Body>
             <Carousel activeIndex={activeImageIndex} onSelect={handleSelect}>
               {slice.primary.gallery_images.map((item, id) => {
-                console.log(id);
                 return (
                   <Carousel.Item key={id}>
                     <figure>

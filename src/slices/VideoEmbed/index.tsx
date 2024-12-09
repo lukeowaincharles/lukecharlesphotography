@@ -22,7 +22,6 @@ const VideoEmbed = ({ slice }: VideoEmbedProps): JSX.Element => {
       autoplay: 0,
     },
   };
-
   return (
     <section
       data-slice-type={slice.slice_type}

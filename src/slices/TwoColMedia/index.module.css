@@ -2,7 +2,7 @@
   margin: var(--r48) 0;
 }
 
-.twoColMedia__bgImg {
+/* .twoColMedia__bgImg {
   position: relative;
   width: 100%;
   height: 480px;
@@ -11,10 +11,18 @@
   background-repeat: no-repeat;
   border-radius: 0.9375rem;
   margin-block: 1rem;
+} */
+
+.twoColMedia__image {
+  margin-block: var(--r16);
+}
+
+.twoColMedia__image img {
+  border-radius: var(--r15);
 }
 
 @media (min-width: 768px) {
-  .twoColMedia__bgImg {
+  .twoColMedia__image {
     margin-block: 0;
   }
 }

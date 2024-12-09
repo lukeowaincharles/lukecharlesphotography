@@ -5,6 +5,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // This component renders your homepage.
 //

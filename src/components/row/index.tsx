@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import { Row } from "react-bootstrap";
 
 type RowProps = {
   children: React.ReactNode;
@@ -6,10 +6,8 @@ type RowProps = {
 
 export default function RowWrap({ children }: RowProps) {
   return (
-    <div
-      className={styles.row + " " + styles.rowCols1 + " " + styles.rowColsMd2}
-    >
+    <Row xs={1} md={2}>
       {children}
-    </div>
+    </Row>
   );
 }

@@ -1,0 +1,62 @@
+{
+  "id": "showcase_carousel",
+  "type": "SharedSlice",
+  "name": "ShowcaseCarousel",
+  "description": "ShowcaseCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyeborw": {
+          "type": "Text",
+          "config": {
+            "label": "Eyeborw",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,heading3"
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carousel",
+            "repeat": true,
+            "fields": {
+              "carousel_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Carousel Image",
+                  "constraint": {
+                    "width": 658,
+                    "height": 439
+                  },
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

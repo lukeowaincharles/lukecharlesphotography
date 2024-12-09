@@ -1,4 +1,4 @@
-import styles from "./index.module.css"
+import { Col } from "react-bootstrap";
 
 type ColProps = {
   children: React.ReactNode;
@@ -7,11 +7,11 @@ type ColProps = {
 };
 
 export default function ColWrap({ children, cols, layout }: ColProps) {
-  const updateLayout = layout === true ? styles.ordermdlast : '';
+  const updateLayout = layout === true ? 'last' : undefined;
   
   return (
-    <div className={styles.col + ' ' + styles.colmd6 + ' ' + updateLayout}>
+    <Col md={{ span: cols, order: updateLayout }}>
       {children}
-    </div>
+    </Col>
   );
 }

@@ -2,7 +2,7 @@ import ColWrap from "@/components/column";
 import ContainerWrap from "@/components/container";
 import RowWrap from "@/components/row";
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import global from "../../global/index.module.css";
 import button from "../../global/button.module.css";
@@ -17,8 +17,6 @@ export type TwoColMediaProps = SliceComponentProps<Content.TwoColMediaSlice>;
  * Component for "TwoColMedia" Slices.
  */
 const TwoColMedia = ({ slice }: TwoColMediaProps): JSX.Element => {
-  const backgroundImage = slice.primary.background_image;
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -36,9 +34,10 @@ const TwoColMedia = ({ slice }: TwoColMediaProps): JSX.Element => {
           </ColWrap>
           <ColWrap cols="6" layout="false">
             <div
-              className={styles.twoColMedia__bgImg}
-              style={{ backgroundImage: `url(${backgroundImage.url})` }}
-            ></div>
+              className={styles.twoColMedia__image}
+            >
+              <PrismicNextImage field={slice.primary.background_image} imgixParams={{ auto: null }} />
+            </div>
           </ColWrap>
         </RowWrap>
       </ContainerWrap>

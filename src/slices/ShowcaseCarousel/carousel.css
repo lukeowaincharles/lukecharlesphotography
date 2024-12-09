@@ -1,0 +1,69 @@
+.carousel-block {
+  padding: var(--r48) 0 var(--r80);
+  background-color: var(--grey-800);
+  color: var(--white);
+}
+
+.carousel-block__eyebrow {
+  margin-bottom: var(--r8);
+}
+
+.carousel-block img {
+  border-radius: var(--r15);
+}
+
+.glide-container {
+  margin-left: var(--r16);
+  margin-right: var(--r16);
+  padding-block: var(--r24);
+}
+
+.glide__arrows {
+  position: relative;
+  left: 0;
+  bottom: -45px;
+}
+
+.glide__arrow--next {
+  left: 80px;
+}
+
+.glide__arrow:focus {
+  outline: 2px solid lightblue;
+}
+
+@media (min-width: 768px) {
+  .carousel-block .glide-container {
+      margin-right: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+  .carousel-block {
+    position: relative;
+    min-height: 600px;
+  }
+
+  .carousel-block  .glide-container {
+      margin-left: 40%;
+      margin-right: 0;
+      width: 60%;
+      padding-block: 0;
+      padding-bottom: var(--r24);
+      position: absolute;
+      top: 48px;
+    }
+  
+}
+
+@media only screen and (min-width: 1700px) {
+  .carousel-block {
+    min-height: 640px;
+  }
+}
+
+@media only screen and (min-width: 1850px) {
+  .carousel-block {
+    min-height: 700px;
+  }
+}

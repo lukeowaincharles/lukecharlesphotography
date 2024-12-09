@@ -26,8 +26,8 @@
           "config": {
             "label": "Background image",
             "constraint": {
-              "width": 350,
-              "height": 526
+              "width": 636,
+              "height": 480
             },
             "thumbnails": []
           }

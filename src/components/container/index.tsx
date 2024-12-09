@@ -1,4 +1,4 @@
-import styles from "./index.module.css"
+import { Container } from "react-bootstrap";
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -6,8 +6,8 @@ type ContainerProps = {
 
 export default function ContainerWrap({ children }: ContainerProps) {
   return (
-    <div className={styles.container}>
+    <Container>
       {children}
-    </div>
+    </Container>
   );
 }

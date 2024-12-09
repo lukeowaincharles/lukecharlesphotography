@@ -17,6 +17,11 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "oGKrOIkJVVs?si=gDcT4rJXFSNhWK05"
+			},
+			"youtube_title": {
+				"__TYPE__": "FieldContent",
+				"value": "structure",
+				"type": "Text"
 			}
 		},
 		"items": []

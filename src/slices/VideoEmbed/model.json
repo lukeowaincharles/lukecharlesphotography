@@ -19,6 +19,13 @@
             "placeholder": "Title of component"
           }
         },
+        "youtube_title": {
+          "type": "Text",
+          "config": {
+            "label": "Youtube Title",
+            "placeholder": ""
+          }
+        },
         "youtube_id": {
           "type": "Text",
           "config": {

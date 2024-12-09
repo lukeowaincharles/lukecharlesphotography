@@ -527,6 +527,16 @@ export interface VideoEmbedSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
+   * Youtube Title field in *VideoEmbed → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_embed.default.primary.youtube_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  youtube_title: prismic.KeyTextField;
+
+  /**
    * Youtube ID field in *VideoEmbed → Default → Primary*
    *
    * - **Field Type**: Text

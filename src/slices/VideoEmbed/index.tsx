@@ -27,7 +27,7 @@ const VideoEmbed = ({ slice }: VideoEmbedProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={global.section__dark + ' ' + styles.videoembed}
+      className={global.section__dark + " " + styles.videoembed}
     >
       <ContainerWrap>
         <div className="video-embed__content">
@@ -38,7 +38,7 @@ const VideoEmbed = ({ slice }: VideoEmbedProps): JSX.Element => {
           height={opts.height}
           width={opts.width}
           src={`https://www.youtube.com/embed/${slice.primary.youtube_id}`}
-          title=""
+          title={`${slice.primary.youtube_title}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen

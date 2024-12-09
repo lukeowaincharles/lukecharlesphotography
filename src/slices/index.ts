@@ -4,8 +4,10 @@ import dynamic from "next/dynamic";
 
 export const components = {
   contact: dynamic(() => import("./Contact")),
+  gallery: dynamic(() => import("./Gallery")),
   hero: dynamic(() => import("./Hero")),
   rich_text: dynamic(() => import("./RichText")),
+  showcase_carousel: dynamic(() => import("./ShowcaseCarousel")),
   two_col_media: dynamic(() => import("./TwoColMedia")),
   video_embed: dynamic(() => import("./VideoEmbed")),
 };

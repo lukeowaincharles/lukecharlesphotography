@@ -1,0 +1,143 @@
+.photo-gallery__grid {
+  column-count: 2;
+  column-gap: var(--r8);
+}
+
+.photo-gallery__grid-image {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: var(--r8);
+  break-inside: avoid;
+}
+
+.photo-gallery__grid-image img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--r15);
+}
+
+.photo-gallery__grid-image > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+.photo-gallery__grid-image .btn {
+  border: none;
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}
+
+.modal-header {
+  border-bottom: 0;
+  padding: var(--r16) var(--r16) 0;
+  height: var(--r40);
+}
+
+.modal-header .btn-close {
+  box-sizing: content-box;
+}
+
+.modal-content {
+  background-color: var(--grey-800);
+  border-radius: var(--r15);
+}
+
+.modal-body {
+  padding: var(--r16) var(--r16) var(--r48);
+}
+
+.photo-gallery__bg-image {
+  width: 100%;
+  height: 600px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.carousel {
+  position: initial;
+}
+
+.carousel-item img {
+  border-radius: var(--r15);
+}
+
+.carousel-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-control-prev {
+  left: 36%;
+}
+
+.carousel-control-next {
+  right: 36%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 12%;
+  top: auto;
+  bottom: 45px;
+}
+
+.carousel-control-prev span,
+.carousel-control-next span {
+  border: 2px solid rgba(250, 250, 250, 0.5);
+  border-radius: 4px;
+  background-size: 60%;
+  width: var(--r40);
+  height: var(--r40);
+}
+
+.carousel-control-prev:hover span,
+.carousel-control-next:hover span {
+  border-color: var(--white);
+}
+
+@media (min-width: 576px) {
+  .photo-gallery__grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .photo-gallery__grid {
+    column-count: 3;
+  }
+
+  .photo-gallery__bgImage {
+    height: 750px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo-gallery__grid {
+    column-count: 4;
+  }
+
+  .carousel-control-prev {
+    left: 0;
+  }
+
+  .carousel-control-next {
+    right: 0;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 7%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .modal-lg {
+    max-width: 1100px;
+  }
+}

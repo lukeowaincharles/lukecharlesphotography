@@ -114,7 +114,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
               })}
             </Carousel>
             <a
-              className="carousel-control-next this-one"
+              className="carousel-control-next"
               role="button"
               aria-label="Next"
               onClick={() => handleSelect(activeImageIndex + 1)}
@@ -126,7 +126,7 @@ const Gallery = ({ slice }: GalleryProps): JSX.Element => {
               <span className="carousel-control-next-icon" aria-hidden="true" />
             </a>
             <a
-              className="carousel-control-prev and-this"
+              className="carousel-control-prev"
               role="button"
               aria-label="Previous"
               onClick={() => handleSelect(activeImageIndex - 1)}

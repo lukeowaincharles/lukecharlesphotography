@@ -1,0 +1,60 @@
+{
+  "id": "photo_display_grid",
+  "type": "SharedSlice",
+  "name": "PhotoDisplayGrid",
+  "description": "PhotoDisplayGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "display_group": {
+          "type": "Group",
+          "config": {
+            "label": "Display Group",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "link_to_project": {
+                "type": "Link",
+                "config": {
+                  "label": "Link to project",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null,
+                  "allowText": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | EmailSignatureSlice
   | ShowcaseCarouselSlice
   | GallerySlice
   | ContactSlice
@@ -173,6 +174,51 @@ type ContactSliceVariation = ContactSliceDefault;
 export type ContactSlice = prismic.SharedSlice<
   "contact",
   ContactSliceVariation
+>;
+
+/**
+ * Primary content in *EmailSignature → Default → Primary*
+ */
+export interface EmailSignatureSliceDefaultPrimary {
+  /**
+   * Email Banner field in *EmailSignature → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: email_signature.default.primary.email_banner
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  email_banner: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for EmailSignature Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmailSignatureSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EmailSignatureSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EmailSignature*
+ */
+type EmailSignatureSliceVariation = EmailSignatureSliceDefault;
+
+/**
+ * EmailSignature Shared Slice
+ *
+ * - **API ID**: `email_signature`
+ * - **Description**: EmailSignature
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmailSignatureSlice = prismic.SharedSlice<
+  "email_signature",
+  EmailSignatureSliceVariation
 >;
 
 /**
@@ -607,6 +653,10 @@ declare module "@prismicio/client" {
       ContactSliceDefaultPrimary,
       ContactSliceVariation,
       ContactSliceDefault,
+      EmailSignatureSlice,
+      EmailSignatureSliceDefaultPrimary,
+      EmailSignatureSliceVariation,
+      EmailSignatureSliceDefault,
       GallerySlice,
       GallerySliceDefaultPrimaryGalleryImagesItem,
       GallerySliceDefaultPrimary,

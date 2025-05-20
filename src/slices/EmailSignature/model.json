@@ -1,0 +1,27 @@
+{
+  "id": "email_signature",
+  "type": "SharedSlice",
+  "name": "EmailSignature",
+  "description": "EmailSignature",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "email_banner": {
+          "type": "Image",
+          "config": {
+            "label": "Email Banner",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

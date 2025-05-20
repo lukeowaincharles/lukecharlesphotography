@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   contact: dynamic(() => import("./Contact")),
+  email_signature: dynamic(() => import("./EmailSignature")),
   gallery: dynamic(() => import("./Gallery")),
   hero: dynamic(() => import("./Hero")),
   rich_text: dynamic(() => import("./RichText")),
